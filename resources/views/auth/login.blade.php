@@ -8,7 +8,7 @@
 			<div class="signup">
 				<form method="POST" action="{{ url('register')	}}">
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="гыуктфьу" placeholder="гsername">
+					<input type="text" name="username" placeholder="username">
 					<input type="email" name="email" placeholder="Email">
 					<input type="password" name="pswd" placeholder="Password">
 					<button type="submit">Sign up</button>
