@@ -25,8 +25,7 @@ class RegRequest extends FormRequest
     {
         return [
             "name" => ['required', 'string'],
-            "username" => ['required', 'min:3'],
-            "email" => ['required', 'email'],
+            "email" => ['required', 'email', 'unique:users'],
             "pswd" => ['required', 'min: 4']
         ];
     }
