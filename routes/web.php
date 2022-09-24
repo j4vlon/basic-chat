@@ -28,7 +28,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('chat', [UsersController::class, 'getChat']);
+    Route::get('chat', [UsersController::class, 'getChat'])->name('chat');
     # Route for logout 
     Route::get('/logout', function () {
         Auth::logout();
