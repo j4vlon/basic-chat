@@ -18,17 +18,23 @@ Route::get('/', function () {
 });
 # For unauthorized users only
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
 Route::middleware('guest')->group(function () {
     Route::get('auth', [AuthController::class, 'getAuth']);
-    Route::post('auth', [AuthController::class, 'postAuth']);
+    Route::post('auth', [AuthController::class, 'postAuth'])->name('auth');
     Route::post('login', [AuthController::class, 'postLogin']);
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('chat', [UsersController::class, 'getChat'])->name('chat');
+    Route::controller(ChatController::class)->group(function () {
+        Route::get('chat', 'getChat')->name('chat');
+        Route::get('/messages', 'messages');
+        Route::post('/send', 'send');
+    });
+
     # Route for logout 
     Route::get('/logout', function () {
         Auth::logout();
