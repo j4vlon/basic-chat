@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -46,5 +47,29 @@ class User extends Authenticatable
     public function messages(): HasMany
     {
         return $this->hasMany(Message::class);
+    }
+
+    /**
+     * Determines the user has administrator role
+     * 
+     * @return boolean
+     */
+
+    public function isAdmin()
+    {
+        return (bool) $this->is_admin;
+    }
+
+    /**
+     * Determine scope for user find by admin role.
+     * 
+     * @param $query
+     * @param integer $admin
+     * @return
+     */
+
+    public function scopeAdmin($query, $admin): Collection
+    {
+        return $query->where('is_admin', $admin);
     }
 }

@@ -38,8 +38,7 @@
 }
 .auth-input {
     width: 60%;
-    height: 20px;
-    background: #e0dede;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     justify-content: center;
     display: flex;
     margin: 20px auto;
@@ -54,7 +53,7 @@
     margin: 10px auto;
     justify-content: center;
     display: block;
-    color: #fff;
+    color: #573b8a;
     background: #573b8a;
     font-size: 1em;
     font-weight: bold;
@@ -67,6 +66,10 @@
 }
 .auth-button:hover {
     background: #6d44b8;
+    color: #fff;
+}
+.signup .auth-button {
+    color: #fff;
 }
 .login {
     height: 460px;

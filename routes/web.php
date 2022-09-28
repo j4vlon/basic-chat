@@ -16,17 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-# For unauthorized users only
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
-Route::middleware('guest')->group(function () {
-    Route::get('auth', [AuthController::class, 'getAuth']);
-    Route::post('auth', [AuthController::class, 'postAuth'])->name('auth');
-    Route::post('login', [AuthController::class, 'postLogin']);
-});
+
+# For unauthorized users only
+
+Route::middleware('guest')->group(
+    function () {
+        Route::controller(AuthController::class)->group(function () {
+            Route::get('auth', 'getAuth');
+            Route::post('auth', 'postAuth')->name('auth');
+            Route::post('login', 'postLogin');
+        });
+    }
+);
+# For authorized users only
 
 Route::middleware('auth')->group(function () {
     Route::controller(ChatController::class)->group(function () {
