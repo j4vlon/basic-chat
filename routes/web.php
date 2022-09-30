@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,9 +29,10 @@ use Illuminate\Support\Facades\Auth;
 Route::middleware('guest')->group(
     function () {
         Route::controller(AuthController::class)->group(function () {
-            Route::get('auth', 'getAuth');
-            Route::post('auth', 'postAuth')->name('auth');
-            Route::post('login', 'postLogin');
+            Route::get('signup', 'getSignUp');
+            Route::post('signup', 'postSignUp')->name('auth');
+            Route::get('signin', 'getSignIn');
+            Route::post('signin', 'postSignIn')->name('signin');
         });
     }
 );
@@ -43,9 +45,20 @@ Route::middleware('auth')->group(function () {
         Route::post('/send', 'send');
     });
 
+    # For users with admin role
+
+    Route::middleware('admin')->group(function () {
+        Route::controller(AdminController::class)->group(function () {
+            Route::get('admin', 'getAdminPage');
+        });
+    });
+    Route::controller(UsersController::class)->group(function () {
+        Route::get('user', 'getUser');
+    });
+
     # Route for logout 
     Route::get('/logout', function () {
         Auth::logout();
-        return redirect('/auth');
+        return redirect('/signin');
     })->name('logout');
 });

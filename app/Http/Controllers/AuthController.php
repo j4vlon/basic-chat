@@ -12,15 +12,15 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
 
-    public function getAuth()
+    public function getSignUp()
     {
         if (Auth::check()) {
             return redirect()->intended(route('chat'));
         }
-        return view('auth.auth');
+        return view('auth.signup');
     }
 
-    public function postAuth(RegRequest $request)
+    public function postSignUp(RegRequest $request)
     {
         $user = User::create([
             'name' => $request->input('name'),
@@ -35,7 +35,15 @@ class AuthController extends Controller
         }
     }
 
-    public function postLogin(LoginRequest $request)
+    public function getSignIn()
+    {
+        if (Auth::check()) {
+            return redirect()->intended(route('chat'));
+        }
+        return view('auth.signin');
+    }
+
+    public function postSignIn(LoginRequest $request)
     {
         $formFields = $request->only(['email', 'password']);
 
