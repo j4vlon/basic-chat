@@ -18,8 +18,9 @@
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                 <a href="#" class="dropdown-item">
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/user.jpg" alt=""
-                            style="width: 40px; height: 40px;">
+                        <img class="rounded-circle"
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            alt="" style="width: 40px; height: 40px;">
                         <div class="ms-2">
                             <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                             <small>15 minutes ago</small>
@@ -29,8 +30,9 @@
                 <hr class="dropdown-divider">
                 <a href="#" class="dropdown-item">
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/user.jpg" alt=""
-                            style="width: 40px; height: 40px;">
+                        <img class="rounded-circle"
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            alt="" style="width: 40px; height: 40px;">
                         <div class="ms-2">
                             <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                             <small>15 minutes ago</small>
@@ -40,8 +42,9 @@
                 <hr class="dropdown-divider">
                 <a href="#" class="dropdown-item">
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="img/user.jpg" alt=""
-                            style="width: 40px; height: 40px;">
+                        <img class="rounded-circle"
+                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            alt="" style="width: 40px; height: 40px;">
                         <div class="ms-2">
                             <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                             <small>15 minutes ago</small>
@@ -49,7 +52,7 @@
                     </div>
                 </a>
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">See all message</a>
+                <a href="/chat" class="dropdown-item text-center">See all message</a>
             </div>
         </div>
         <div class="nav-item dropdown">
@@ -85,7 +88,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                 <a href="/user" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
+                <a href="/edit/{{ auth()->user()->id }}" class="dropdown-item">Settings</a>
                 <a href="/logout" class="dropdown-item">Log Out</a>
             </div>
         </div>

@@ -52,8 +52,11 @@ Route::middleware('auth')->group(function () {
             Route::get('admin', 'getAdminPage');
         });
     });
+
+    # Route for users 
     Route::controller(UsersController::class)->group(function () {
         Route::get('user', 'getUser');
+        Route::get('edit/{id}', 'userUpdate');
     });
 
     # Route for logout 

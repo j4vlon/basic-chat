@@ -63,40 +63,40 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Full Name</p>
+                                    <p class="mb-1">Full Name</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0">{{ auth()->user()->name }}</p>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Email</p>
+                                    <p class="mb-1">Email</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0">{{ auth()->user()->email }}</p>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Phone</p>
+                                    <p class="mb-1">Phone</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0">(097) 234-5678</p>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Mobile</p>
+                                    <p class="mb-1">Mobile</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <p class="text-muted mb-0">(098) 765-4321</p>
                                 </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Address</p>

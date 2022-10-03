@@ -22,7 +22,6 @@
 
 
     <!-- Libraries Stylesheet -->
-    <link type="text/css" href="{{ asset('assets/style/owl/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/style/tempusdominus-bootstrap-4.css') }}" rel="stylesheet" />
 
 
